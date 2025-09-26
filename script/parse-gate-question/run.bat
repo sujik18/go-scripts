@@ -1,0 +1,11 @@
+@echo off
+
+set "MLC_TMP_CURRENT_SCRIPT_PATH=%~dp0"
+set "MLC_TMP_CURRENT_SCRIPT_PATH=%MLC_TMP_CURRENT_SCRIPT_PATH:~0,-1%"
+
+if not defined MLC_PYTHON_BIN_WITH_PATH set "MLC_PYTHON_BIN_WITH_PATH=python"
+
+echo Python path: %MLC_PYTHON_BIN_WITH_PATH%
+echo Script path: %MLC_TMP_CURRENT_SCRIPT_PATH%\process.py
+%MLC_PYTHON_BIN_WITH_PATH% "%MLC_TMP_CURRENT_SCRIPT_PATH%\process.py"
+if errorlevel 1 exit /b 1

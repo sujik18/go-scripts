@@ -1,0 +1,95 @@
+alias: gemini-gate-eval
+automation_alias: script
+automation_uid: 5b4e0237da074764
+category: LLM GATE Evaluation
+deps:
+- names:
+  - python
+  - python3
+- tags: get,python3
+- tags: get,generic-python-lib,_python-dotenv
+- names: parse-gate-question
+- tags: parse-gate-question
+- names:
+  - _matplotlib
+  tags: get,generic-python-lib,_matplotlib
+- names:
+  - _google-generativeai
+  tags: get,generic-python-lib,_google-generativeai
+- names:
+  - _openai
+  tags: get,generic-python-lib,_openai
+- names:
+  - _groq 
+  tags: get,generic-python-lib,_groq
+new_env_keys:
+- MLC_MODEL_TYPE
+tags:
+- llm-evaluation
+- app
+- question
+- go
+- gate
+input_mapping:
+  model_type: MLC_MODEL_TYPE
+uid: 7fe2944512654e80
+variations:
+  MLC_MODEL_TYPE.#:
+    env:
+     MLC_MODEL_TYPE: '#'
+  OPENAI:
+    deps:
+    - tags: get,tags,parse-gate-question
+    - tags: get,generic-python-lib,_package.openai
+    env:
+      MLC_MODEL_TYPE: openai
+  OPENAI_API_KEY.#:
+    env:
+      OPENAI_API_KEY: '#'
+  OPENAI_MODEL.#:
+    env:
+      MLC_OPENAI_MODEL: '#'
+  gemini:
+    deps:
+    - tags: get,tags,parse-gate-question
+    - tags: get,generic-python-lib,_package.google.generativeai
+    env:
+      MLC_MODEL_TYPE: gemini
+  GEMINI_API_KEY.#:
+    env:
+      GEMINI_API_KEY: '#'
+  GEMINI_MODEL.#:
+    env:
+      MLC_GEMINI_MODEL: '#'
+  groq:
+    deps:
+    - tags: get,tags,parse-gate-question
+    - tags: get,generic-python-lib,_package.groq
+    env:
+      MLC_MODEL_TYPE: groq
+  GROQ_API_KEY.#:
+    env:
+      GROQ_API_KEY: '#'
+  GROQ_MODEL.#:
+    env:
+      MLC_GROQ_MODEL: '#'
+  gate:
+    group: question-source
+    default_variations:
+      question-subject: cse
+      year: year.2025
+    env:
+      GATE_PAPER_SOURCE: gate
+      MLC_GATE_QUESTION_PDF_URL: '#'
+      MLC_GATE_ANSWER_PDF_URL: '#'
+      MLC_GATE_QUESTION_PDF_PATH: '#'
+      MLC_GATE_ANSWER_PDF_PATH: '#'
+      MLC_GATE_OUTPUT_JSON_PATH: '#'
+  cse:
+    group: question-subject
+    env:
+      GATE_SUBJECT: cse
+  year.2025:
+    group: year
+    env:
+      GATE_YEAR: 2025
