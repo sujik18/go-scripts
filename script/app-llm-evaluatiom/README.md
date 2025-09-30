@@ -2,7 +2,7 @@
 1. Install MLC and MLC Flow and activate the virtual environment with the following reference: https://docs.mlcommons.org/mlcflow/install/
 
 2. Create a .env file in the same directory as the customize.py file with the following content:
-    ```
+    ```shell
     MLC_MODEL_TYPE='gemini' 
     (or 'openai' or 'groq' and make sure to set the corresponding API KEY)
 
@@ -11,7 +11,7 @@
     Replace `<your-api-key>` with your actual API key.
 
     ####  Optional Parameters and their default values
-    ```
+    ```shell
     OPENAI_API_KEY='<your-api-key>'
     GROQ_API_KEY='<your-api-key>'
     MLC_GEMINI_MODEL = 'models/gemini-2.5-flash' 
@@ -30,7 +30,7 @@
     NOTE: Temporary assets for GATE CS 25 can be obtained from [sujik18/go-script/release](https://github.com/sujik18/go-scripts/releases/tag/v1)
 
 3. To run the script, use the following comm0and:
-    ```
+    ```shell
     mlcr llm-evaluation
     ```
 
@@ -38,7 +38,7 @@ This one script will automatically download the required GATE question paper and
 
 ## Results
 1. Gemini-2.5-flash on GATE-CS 2025 Set 2 paper Test 1
-    ```
+    ```shell
     ------------------------------------------------------------------------------------------------------------------------------------
     Results for models/gemini-2.5-flash:
     *******************************************************
@@ -60,7 +60,7 @@ This one script will automatically download the required GATE question paper and
     ---------------------
     ```
 2. Gemini-2.5-flash on GATE-CS 2025 Set 2 paper Test 2
-    ```
+    ```shell
     ------------------------------------------------------------------------------------------------------------------------------------
     Results for models/gemini-2.5-flash:
     Question Paper Filename:b''
@@ -83,7 +83,7 @@ This one script will automatically download the required GATE question paper and
     ---------------------
     ```
 3. Gemini-2.5-flash on GATE-CS 2025 Set 1 paper
-    ```
+    ```shell
     ------------------------------------------------------------------------------------------------------------------------------------
     Results for models/gemini-2.5-flash:
     *******************************************************
@@ -105,7 +105,7 @@ This one script will automatically download the required GATE question paper and
     ---------------------
     ```
 4. llama-3.3-70b-versatile on GATE-CS 2025 Set 2 paper (via Groq)
-    ```
+    ```shell
     ********************************************************************************************************************************
     Results for llama-3.3-70b-versatile:
     Question Paper Filename: b''
@@ -128,7 +128,7 @@ This one script will automatically download the required GATE question paper and
     ---------------------
     ```
 5. gemma2-9b-it on GATE-CS 2025 Set 2 paper (via Groq)
-    ```
+    ```shell
     ********************************************************************************************************************************
     Results for gemma2-9b-it:
     Question Paper Filename: b''
@@ -151,7 +151,7 @@ This one script will automatically download the required GATE question paper and
     ---------------------
     ```
 6. qwen3-32b on GATE-CS 2025 Set 2 paper (via Groq)
-    ```
+    ```shell
     ********************************************************************************************************************************
     Results for gemma2-9b-it:
     Question Paper Filename: b''
