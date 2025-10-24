@@ -296,7 +296,7 @@ def modelProcess(i):
     filename = env.get('MLC_GATE_QUESTION_PDF_URL', 'https://github.com/user-attachments/files/20423322/CS25set2-questionPaper.pdf').split("/")[-1]
 
     # Results summary
-    print(f"Results for {model_name}:")
+    print(f"Result for: {model_name}")
     print(f"Question Paper Filename: {filename}")
     print("*******************************************************")
     print(f"Marks Obtained by {model_name} is {marksObtained:.2f} out of total {totalMarks} marks")
