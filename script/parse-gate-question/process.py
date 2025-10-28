@@ -124,11 +124,11 @@ def extractProcess(i):
     # Download the paper from site
     questionpdf_url = env.get('MLC_GATE_QUESTION_PDF_URL', "https://github.com/user-attachments/files/20423322/CS25set2-questionPaper.pdf")
     answerpdf_url = env.get('MLC_GATE_ANSWER_PDF_URL', "https://github.com/user-attachments/files/20423320/CS25set2-answerKey.pdf")
-    # print("Downloading Question Paper PDF ..")
-    # download_pdf(questionpdf_url, question_pdf)
-    # print("Downloading Answer Key PDF ..")
-    # download_pdf(answerpdf_url, answer_pdf)
-    print("DEBUG: Skipping downloading PDFs")
+    print("Downloading Question Paper PDF ..")
+    download_pdf(questionpdf_url, question_pdf)
+    print("Downloading Answer Key PDF ..")
+    download_pdf(answerpdf_url, answer_pdf)
+    # print("DEBUG: Skipping downloading PDFs")
 
     # Extract and clean text
     print("Extracting text from PDFs...")

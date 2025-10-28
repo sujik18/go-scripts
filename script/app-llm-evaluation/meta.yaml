@@ -1,18 +1,17 @@
-alias: gemini-gate-eval
+alias: llm-gate-eval
 automation_alias: script
 automation_uid: 5b4e0237da074764
 category: LLM GATE Evaluation
 deps:
-- names:
-  - python
-  - python3
-- tags: get,python3
-- tags: get,generic-python-lib,_python-dotenv
+- names: python
+  tags: get,python3,
+- names: python-lib
+  tags: get,generic-python-lib,_python-dotenv,
 - names: parse-gate-question
-- tags: parse-gate-question
+  tags: parse-gate-question,
 - names:
   - _matplotlib
-  tags: get,generic-python-lib,_matplotlib
+  tags: get,generic-python-lib,_matplotlib,
 - names:
   - _google-generativeai
   tags: get,generic-python-lib,_google-generativeai
